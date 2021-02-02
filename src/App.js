@@ -1,43 +1,22 @@
+
 import './App.css';
-import React,{ Component } from 'react';
-import Login from './Login'
-import Home from './Home'
+import React from 'react';
+//import { BrowserRouter as Router, Route } from 'react-router-dom';
+ import Home from './Home';
+// import Login from './Login';
+// import Signup from './Signup';
+// import {AuthProvider} from './Auth';
 
-
-class App extends Component{
- 
-  Constructor(props){
-    Super(props);
-    this.state ={
-      user:{},
-    }
-  }
-
-  ComponentDidMount(){
-    this.authListener
-  }
-   
-  authListner(){
-    firebase.auth().onAuthStateChanged((user) =>{
-    //  console.log(user);
-      if(user){
-        this.setState({user});
-        //localStorage.setItem('user',user.uid);
-              }
-              else{
-                this.setState({user:null});
-                //localStorage.removeItem('user');
-              }
-    }
-  )
-}
-
-render(){
-  return(
-    <div className="App">
-          { this.state.user ? (<Home />) :(<Login/>)}
-    </div>
+function App() {
+  return (
+    
+      <div>
+        <Home />
+       
+      </div>
+  
+    
   );
 }
-}
+
 export default App;

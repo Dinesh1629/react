@@ -1,20 +1,14 @@
-import Ract ,{ COmponent }from 'react';
+import React from 'react';
+import app from './Base';
 
-import firebase from 'firebase';
+const Home = () =>{
+    return(
+        <>
+        <h1>Home</h1>
+        <button onClick={() => app.auth().signOut()}>SignOut</button>
+        </>
+    );
+};
 
 
-class Home extends Component{
-    constructor(props){
-        super(props);
-    }
-
-
-    render(){
-        return(
-            <div ClassName="col-md-4">
-                <h1>You are at Home</h1>
-            </div>
-        );
-    }
-}
 export default Home;
